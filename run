@@ -1,0 +1,40 @@
+#!/bin/bash
+
+store=$(echo "$@" | egrep -o '\w+$')
+
+if [[ $store = 'js' ]]
+then nodejs "$@"
+elif [[ $store = 'cpp' ]]
+then g++ "$@"
+elif [[ $store = 'py' ]]
+then python3? "$@"
+elif [[ $store = 'c' ]]
+then gcc "$@"
+elif [[ $store = 'java' ]]
+then javac "$@"
+elif [[ $store = 'sh' ]]
+then bash "$@"
+elif [[ $store = 'rb' ]]
+then ruby "$@"
+elif [[ $store = 'pl' ]]
+then perl "$@"
+elif [[ $store = 'php' ]]
+then php "$@"
+elif [[ $store = 'cs' ]]
+then mcs "$@"
+elif [[ $store = 'go' ]]
+then go run "$@"
+elif [[ $store = 'hs' ]]
+then runhaskell "$@"
+elif [[ $store = 'pas' ]]
+then fpc "$@"
+elif [[ $store = 'lua' ]]
+then lua "$@"
+elif [[ $store = 'clj' ]]
+then clj "$@"
+elif [[ $store = 'scm' ]]
+then guile "$@"
+elif [[ $store = 'ml' ]]
+then ocaml "$@"
+elif [[ $store = 'erl' ]]
+fi
