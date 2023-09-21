@@ -5,9 +5,14 @@ store=$(echo "$@" | egrep -o '\w+$')
 if [[ $store = 'js' ]]
 then nodejs "$@"
 elif [[ $store = 'cpp' ]]
-then g++ "$@"
+then g++ "$@" && ./a.out
 elif [[ $store = 'py' ]]
-then python3? "$@"
+then 
+    if command -v python3 &>/dev/null; then
+        python3 "$@"
+    else
+        python "$@"
+    fi
 elif [[ $store = 'c' ]]
 then gcc "$@"
 elif [[ $store = 'java' ]]
